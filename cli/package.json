@@ -1,0 +1,21 @@
+{
+  "name": "@komandaaa/cli",
+  "version": "1.0.6",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "new:version": "npm publish --access public"
+  },
+  "author": "komandaaa",
+  "bin": {
+    "komandaaa-cli": "bin/komandaaa-cli"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^16.7.1",
+    "commander": "^8.1.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  }
+}

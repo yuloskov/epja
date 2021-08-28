@@ -1,0 +1,20 @@
+#!/user/bin/env node
+const {program} = require('commander')
+const package = require('../package');
+
+program
+  .option('--init', 'init app')
+  .version(package.version)
+  .on('--help', ()=> {
+    console.log('pomosh')
+  })
+  .parse()
+
+const options = program.opts()
+if (options.init) {
+  // smth with package json
+  const path = require('path')
+  const fs = require('fs')
+  const packagepath = path.resolve('package.json')
+  console.log(packagepath)
+}
