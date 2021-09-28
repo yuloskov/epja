@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{{title}}}</title>
+</head>
+
+<body>
+  <script src="{{{baseUrl}}}/fire.app/{{{fireAppVersion}}}/index.js"></script>
+  <script>
+    fireApp({
+      apps: {{{ toJSON apps }}},
+      navigation: {{{ toJSON navigation }}},
+      config: {{{ toJSON config }}},
+    })
+  </script>
+
+  <div id="root"></div>
+</body>
+
+</html>

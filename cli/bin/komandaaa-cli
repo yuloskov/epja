@@ -1,36 +1,62 @@
-#!/user/bin/env node
-const {program} = require('commander')
-const { inherits } = require('util')
-const package = require('../package');
+#!/usr/bin/env node
+const { program } = require('commander')
+const package = require('../package')
 
 program
   .option('--init', 'init app')
-  .options('--server', 'run server')
+  .option('--server', 'run server')
   .version(package.version)
-  .on('--help', ()=> {
+  .on('--help', () => {
     console.log('pomosh')
   })
   .parse()
 
 const options = program.opts()
-if (options.init) {
-  // smth with package json
-  require('child_process').execSync('npm i react', {stdio: inherits})
-  const path = require('path')
-  const fs = require('fs')
-  const packagepath = path.resolve('package.json')
 
+if (options.init) {
+  const dependencies = [
+    "react", 
+    "react-dom", 
+    "typescript", 
+    "../fire.app", // "@komandaaa/fire.app",
+  ]
+  
+  const devDependencies = [
+    "@types/react",
+    "@types/react-dom",
+  ]
+
+  require("child_process").execSync(
+    `npm install --save ${dependencies.join(" ")}`,
+    {
+      stdio: "inherit",
+    }
+  )
+
+  require("child_process").execSync(
+    `npm install --save-dev ${devDependencies.join(" ")}`,
+    {
+      stdio: "inherit",
+    }
+  )
+
+  const path = require("path")
+  const fs = require("fs")
+  const packagepath = path.resolve("package.json")
   const package = require(packagepath)
+
   package.scripts = package.scripts || {}
-  package.scripts.start = 'npx komandaaa-cli --server'
+  package.scripts.start = "komandaaa-cli --server"
+  
+  console.log('Installed dependencies: \n', dependencies)
+  console.log('Installed dev-dependencies: \n', devDependencies)
+  console.log('Configured scripts: \n', package.scripts)
 
   fs.writeFileSync(packagepath, JSON.stringify(package, null, 4))
-  console.log(packagepath)
 }
 
-if (option.server) {
+if (options.server) {
   const startServer = require('@komandaaa/dev-server')
 
-  startServer({port: 4001})
-  console.log(111)
+  startServer({ port: 4001 })
 }
