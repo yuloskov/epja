@@ -1,5 +1,5 @@
 {
-    "name": "epja",
+    "name": "dummy",
     "version": "1.0.1",
     "description": "",
     "main": "index.js",
@@ -13,9 +13,12 @@
     "dependencies": {
         "@komandaaa/cli": "file:../cli",
         "@komandaaa/fire.app": "file:../fire.app",
+        "babel-loader": "^8.2.2",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "typescript": "^4.4.3"
+        "ts-loader": "^9.2.6",
+        "typescript": "^4.4.3",
+        "webpack": "^5.55.1"
     },
     "devDependencies": {
         "@types/react": "^17.0.24",

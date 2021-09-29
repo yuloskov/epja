@@ -6,10 +6,10 @@ import { App } from './app'
 
 export default () => <App/>
 
-const mount = (Component) => {
+export const mount = (Component) => {
   ReactDom.render(<Component />, document.getElementById('root'))
 }
 
-const unmount = () => {
+export const unmount = () => {
   ReactDom.unmountComponentAtNode(document.getElementById('root'))
 }
