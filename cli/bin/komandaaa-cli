@@ -14,45 +14,7 @@ program
 const options = program.opts()
 
 if (options.init) {
-  const dependencies = [
-    "react", 
-    "react-dom", 
-    "typescript", 
-    "../fire.app", // "@komandaaa/fire.app",
-  ]
-  
-  const devDependencies = [
-    "@types/react",
-    "@types/react-dom",
-  ]
-
-  require("child_process").execSync(
-    `npm install --save ${dependencies.join(" ")}`,
-    {
-      stdio: "inherit",
-    }
-  )
-
-  require("child_process").execSync(
-    `npm install --save-dev ${devDependencies.join(" ")}`,
-    {
-      stdio: "inherit",
-    }
-  )
-
-  const path = require("path")
-  const fs = require("fs")
-  const packagepath = path.resolve("package.json")
-  const package = require(packagepath)
-
-  package.scripts = package.scripts || {}
-  package.scripts.start = "komandaaa-cli --server"
-  
-  console.log('Installed dependencies: \n', dependencies)
-  console.log('Installed dev-dependencies: \n', devDependencies)
-  console.log('Configured scripts: \n', package.scripts)
-
-  fs.writeFileSync(packagepath, JSON.stringify(package, null, 4))
+  require('../src/init')(options);
 }
 
 if (options.server) {

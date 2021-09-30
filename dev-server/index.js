@@ -23,7 +23,7 @@ const startServer = ({ port }) => {
       filename: 'index.js',
       path: path.resolve('dist'),
       libraryTarget: 'umd',
-      publicPath: `/static/dummy/1.0.0/`
+      publicPath: `/static/${moduleData.name}/1.0.0/`
     },
     resolve: {
       extensions: ['.tsx', '.js', '.jsx', '.ts', '.json']
@@ -37,7 +37,7 @@ const startServer = ({ port }) => {
   })
 
   app.use(webpackDevMiddleWare(compiler, {
-    publicPath: `/static/dummy/1.0.0`
+    publicPath: `/static/${moduleData.name}/1.0.0`
   }))
 
   app.get(appPath, (req, res) => {
