@@ -1,6 +1,6 @@
 {
   "name": "@komandaaa/dev-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@komandaaa/templates": "file:../templates",
+    "@komandaaa/templates": "^1.0.1",
     "@types/express": "^4.17.13",
     "express": "^4.17.1",
     "ts-loader": "^9.2.6",

@@ -4,7 +4,7 @@ const init = () => {
   const dependencies = [
     "react", 
     "react-dom",
-    "../fire.app", // "@komandaaa/fire.app",
+    "@komandaaa/fire.app",
     "webpack",
     "webpack-dev-middleware",
     "ts-loader",

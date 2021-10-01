@@ -1,12 +1,11 @@
 {
     "name": "@komandaaa/cli",
-    "version": "1.0.6",
+    "version": "1.0.8",
     "description": "",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "new:version": "npm publish --access public",
-        "start": "lomandaaa-cli --server"
+        "new:version": "npm publish --access public"
     },
     "author": "komandaaa",
     "bin": {
@@ -14,7 +13,7 @@
     },
     "license": "ISC",
     "dependencies": {
-        "@komandaaa/dev-server": "file:../dev-server",
+        "@komandaaa/dev-server": "^1.0.1",
         "@types/node": "^16.7.1",
         "commander": "^8.1.0",
         "fs": "0.0.1-security",
