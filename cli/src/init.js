@@ -4,8 +4,11 @@ const init = () => {
   const dependencies = [
     "react", 
     "react-dom",
-    "typescript", 
     "../fire.app", // "@komandaaa/fire.app",
+    "webpack",
+    "webpack-dev-middleware",
+    "ts-loader",
+    "typescript",
   ]
   
   const devDependencies = [
