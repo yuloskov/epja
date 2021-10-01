@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const init = () => {
   const dependencies = [
-    "react", 
+    "react",
     "react-dom",
     "@komandaaa/fire.app",
     "webpack",
@@ -10,7 +10,7 @@ const init = () => {
     "ts-loader",
     "typescript",
   ]
-  
+
   const devDependencies = [
     "@types/react",
     "@types/react-dom",
@@ -37,7 +37,7 @@ const init = () => {
 
   package.scripts = package.scripts || {}
   package.scripts.start = "komandaaa-cli --server"
-  
+
   console.log('Installed dependencies: \n', dependencies)
   console.log('Installed dev-dependencies: \n', devDependencies)
   console.log('Configured scripts: \n', package.scripts)
@@ -47,20 +47,21 @@ const init = () => {
   if (!fs.existsSync(tsConfigPath)) {
     const tsConfig = {
       "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "strict": true,
-      "noImplicitAny": false,
-      "skipLibCheck": true,
-      "moduleResolution":"node"
+        "target": "es5",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "jsx": "react",
       }
     }
     fs.writeFileSync(tsConfigPath, JSON.stringify(tsConfig, null, 4))
   }
   fs.writeFileSync(packagepath, JSON.stringify(package, null, 4))
 
-  }
+}
 
-module.exports = init;
+module.exports = init
